@@ -1,66 +1,59 @@
-## Foundry
+# Buy Me A Coffee - Solidity Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project implements a decentralized application (dApp) called "Buy Me A Coffee" using Solidity. The dApp allows users to send tips (in the form of cryptocurrency) to creators as a token of appreciation.
 
-Foundry consists of:
+## Project Structure
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **foundry.toml**: Configuration file for the Foundry framework.
+- **broadcast/**: Contains deployment scripts and their execution logs.
+- **cache/**: Stores cached data for faster builds.
+- **lib/**: Includes external libraries and dependencies, such as `forge-std`.
+- **script/**: Contains deployment scripts written in Solidity.
+- **src/**: Contains the main Solidity contract `buyMeCoffee.sol`.
+- **test/**: Contains test files for the project.
 
-## Documentation
+## Prerequisites
 
-https://book.getfoundry.sh/
+- [Foundry](https://book.getfoundry.sh/) installed on your system.
+- A compatible Ethereum wallet and testnet setup.
 
-## Usage
+## Getting Started
 
-### Build
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd buy-me-a-coffee
+   ```
 
-```shell
-$ forge build
-```
+2. **Install Dependencies**
+   Foundry automatically manages dependencies. Run the following command to install them:
+   ```bash
+   forge install
+   ```
 
-### Test
+3. **Compile the Contracts**
+   Compile the Solidity contracts using Foundry:
+   ```bash
+   forge build
+   ```
 
-```shell
-$ forge test
-```
+4. **Run Tests**
+   Execute the test suite to ensure everything is working as expected:
+   ```bash
+   forge test
+   ```
 
-### Format
+5. **Deploy the Contract**
+   Use the deployment script located in `script/DeployBuyMeCoffee.s.sol` to deploy the contract:
+   ```bash
+   forge script script/DeployBuyMeCoffee.s.sol --rpc-url <RPC_URL> --private-key <PRIVATE_KEY> --broadcast
+   ```
 
-```shell
-$ forge fmt
-```
+## Features
 
-### Gas Snapshots
+- Send tips to creators in cryptocurrency.
+- View transaction history.
+- Fully decentralized and transparent.
 
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## TODO
+[] Write tests
