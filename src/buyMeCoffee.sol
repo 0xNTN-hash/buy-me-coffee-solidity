@@ -37,8 +37,8 @@ contract BuyMeCoffee {
     }
 
     /********STATE VARIABLES********/
-    address payable s_owner;
-    Memo[] s_memos;
+    address private payable s_owner;
+    Memo[] private s_memos;
 
     /********EVENTS********/
     // Event to emit when a new coffee is bought
@@ -96,7 +96,6 @@ contract BuyMeCoffee {
         if(!success) {
             revert BuyMeCoffee__TransferFailed();
         }
-
     }
 
     /********PUBLIC FUNCTIONS********/
